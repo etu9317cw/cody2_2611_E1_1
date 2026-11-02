@@ -1,0 +1,11 @@
+# 보너스: docker run 명령을 "문서화된 실행 설정"으로 바꾼 것
+services:
+  web:
+    build: .                      # 같은 Dockerfile 로 빌드
+    image: e1-1-web:compose
+    container_name: e1-1-compose
+    ports:
+      - "${WEB_PORT:-8090}:80"    # 환경 변수로 호스트 포트 변경 (기본 8090)
+    environment:
+      APP_ENV: ${APP_ENV:-dev}    # 환경 변수로 모드 변경 (기본 dev)
+    restart: unless-stopped
