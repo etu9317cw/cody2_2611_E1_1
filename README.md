@@ -79,7 +79,10 @@
 
 ### 빠른 재현 (평가자용)
 
+Windows Git Bash에서는 `/data/...` 같은 인자가 Windows 경로로 바뀌므로 먼저 `export MSYS_NO_PATHCONV=1`을 실행합니다(Linux/macOS/WSL은 필요 없음). 아래 명령은 이 PC에서 그대로 다시 실행해 `200 200`과 `hi`가 나오는 것을 확인했습니다.
+
 ```bash
+export MSYS_NO_PATHCONV=1   # Windows Git Bash 전용
 # 이 저장소 폴더에서
 docker build -t e1-1-web:1.0 .
 docker run -d -p 8080:80 --name web-8080 e1-1-web:1.0

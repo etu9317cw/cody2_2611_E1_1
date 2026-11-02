@@ -36,3 +36,4 @@
 - **원인 가설**: 바인드 마운트는 호스트의 실제 폴더를 가리키는 연결이라 호스트 경로가 그대로 설정에 들어간다. 또 Git Bash는 `/`로 시작하는 인자를 Windows 경로로 바꿔 버릴 수 있어 `MSYS_NO_PATHCONV=1`을 켜고 `C:/…` 형태로 지정했다(켜지 않은 경우는 시험하지 않았다).
 - **확인**: 이 설정으로 의도한 폴더가 연결되어 호스트 파일 수정이 컨테이너에 바로 보였다(`Type:"bind"`, `Mode:"ro"`).
 - **해결**: `logs/08_bind_mount.md`에 `$PWD` 기반 명령(Linux/macOS/WSL)과 Windows용 명령을 함께 적어 PC 종속 부분을 대체 방법으로 남겼다.
+- **추가 확인(S7 재현 시험)**: README의 볼륨 재현 명령을 `MSYS_NO_PATHCONV=1` 없이 실행하자 `cat: 'C:/Program Files/Git/data/hello.txt': No such file or directory`가 나와 `/data/hello.txt`가 Git 설치 경로로 바뀐 것을 직접 확인했다. 켠 뒤에는 같은 명령이 `hi`를 출력했다. 마운트 경로뿐 아니라 컨테이너 안 경로 인자 전부에 해당하므로 README에 안내를 넣었다.
