@@ -45,7 +45,7 @@
 - [x] 바인드 마운트 반영 (호스트 수정 전/후) — [로그 08](docs/logs/08_bind_mount.md)
 - [x] 볼륨 영속성 (컨테이너 삭제 전/후) — [로그 09](docs/logs/09_volume.md)
 - [x] Git 설정 · `git config --list` — [로그 11](docs/logs/11_git_config.md)
-- [ ] VSCode GitHub 연동 캡처 — 4번 항목 참고 (`docs/img/vscode-github.png`, 캡처 후 체크)
+- [x] VSCode GitHub 연동 캡처 — [`docs/img/vscode-github.png`](docs/img/vscode-github.png) (7절)
 - [x] 보안 · 개인정보 (토큰 · 이메일 마스킹) — [로그 11](docs/logs/11_git_config.md)
 - [x] (보너스) Compose 단일 서비스 · `up/ps/logs/down` · 환경 변수로 포트·모드 변경 — [로그 10](docs/logs/10_compose_bonus.md)
 
@@ -125,7 +125,9 @@ docker volume rm mydata
 
 - 사용자 정보 · 기본 브랜치 설정과 `git config --list`(마스킹)는 [로그 11](docs/logs/11_git_config.md).
 - GitHub 로그인(GitHub CLI) 확인과 원격 `origin` 연결도 로그 11.
-- **VSCode GitHub 연동 캡처**: `docs/img/vscode-github.png` — 본인이 캡처해 둘 항목(토큰·이메일은 가려서 저장). 캡처가 들어오면 위 체크리스트의 빈 칸에 체크한다.
+- **VSCode GitHub 연동 캡처**: [`docs/img/vscode-github.png`](docs/img/vscode-github.png) — VS Code에서 이 저장소를 열고 통합 터미널에서 `git config user.name` · `git remote -v`(origin = GitHub) · `gh auth status`(계정 `etu9317cw` 로그인, 토큰은 `gho_****`로 마스킹됨)를 실행한 화면.
+
+![VSCode GitHub 연동](docs/img/vscode-github.png)
 
 ## 8) 보안
 
